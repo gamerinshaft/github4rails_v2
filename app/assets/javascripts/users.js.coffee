@@ -8,10 +8,10 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     @serviceObject = new RichMarker options #assign marker to @serviceObject
 
   rich_marker_options: ->
-    marker = document.createElement("div")
-    marker.setAttribute 'class', 'marker_container'
-    marker.innerHTML = @args.title
-    _.extend(@marker_options(), { content: marker })
+    boxText = document.createElement("div")
+    boxText.setAttribute 'class', 'yellow'
+    boxText.innerHTML = @args.title
+    _.extend(@marker_options(), { content: boxText })
 
 @buildMap = (markers)->
 	handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
