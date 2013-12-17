@@ -14,6 +14,7 @@ class UsersController < ApplicationController
         "width" => "32",
         "height" => "32"
         })
+      marker.json({ title: user.title })
     end
   end
 
